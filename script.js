@@ -30,7 +30,7 @@ class Aztec extends Warrior {
     }
     drinkNesquik(){
         this.life += 10
-        return 'Has sumado '+this.life+' puntos de vida'
+        return 'Ahora tienes '+this.life+' puntos de vida'
     }
 }
 
@@ -45,3 +45,5 @@ const bebeMaya = maya.drinkColaCao()
 const ataqueMaya = azteca.defend(maya.attack())
 
 const ataqueAzteca = maya.defend(azteca.attack())
+
+console.log(bebeAzteca)
