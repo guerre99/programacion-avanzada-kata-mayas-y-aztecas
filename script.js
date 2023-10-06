@@ -5,11 +5,12 @@ class Warrior {
     }
 
     attack(power){
-        this.power
+        return this.power
     }
     
     defend(damage){
-        return this.life -= damage
+        this.life -= damage
+        return 'Al defensor le quedan '+ this.life  +' puntos de vida'
     }
 }
 
@@ -19,6 +20,7 @@ class Maya extends Warrior {
     }
     drinkColaCao(){
         this.power += 10
+        return 'Has sumado '+this.power+' puntos de ataque'
     }
 }
 
@@ -28,6 +30,7 @@ class Aztec extends Warrior {
     }
     drinkNesquik(){
         this.life += 10
+        return 'Has sumado '+this.life+' puntos de vida'
     }
 }
 
@@ -35,22 +38,10 @@ const maya = new Maya(100,10)
 
 const azteca = new Aztec(50,30)
 
-console.log(maya,azteca,'antes de la accion')
+const bebeAzteca = azteca.drinkNesquik()
 
-azteca.drinkNesquik()
+const bebeMaya = maya.drinkColaCao()
 
-maya.drinkColaCao()
+const ataqueMaya = azteca.defend(maya.attack())
 
-console.log(maya,azteca,'beben')
-
-maya.attack(maya.power)
-
-azteca.defend(maya.power)
-
-console.log(maya,azteca,'ataca maya')
-
-azteca.attack(azteca.power)
-
-maya.defend(azteca.power)
-
-console.log(maya,azteca,'ataca azteca')
+const ataqueAzteca = maya.defend(azteca.attack())
