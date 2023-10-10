@@ -4,33 +4,27 @@ class Warrior {
         this.power = power
     }
 
-    attack(power){
+    attack(){
         return this.power
     }
     
     defend(damage){
         this.life -= damage
-        return 'Al defensor le quedan '+ this.life  +' puntos de vida'
+        console.log('Al defensor le quedan '+ this.life  +' puntos de vida')
     }
 }
 
 class Maya extends Warrior {
-    constructor(life,power){
-        super(life,power)
-    }
     drinkColaCao(){
         this.power += 10
-        return 'Has sumado '+this.power+' puntos de ataque'
+        console.log('Maya ahora tiene '+this.power+' puntos de ataque')
     }
 }
 
 class Aztec extends Warrior {
-    constructor(life,power){
-        super(life,power)
-    }
     drinkNesquik(){
         this.life += 10
-        return 'Ahora tienes '+this.life+' puntos de vida'
+        console.log('Azteca ahora tiene '+this.life+' puntos de vida')
     }
 }
 
@@ -38,12 +32,15 @@ const maya = new Maya(100,10)
 
 const azteca = new Aztec(50,30)
 
-const bebeAzteca = azteca.drinkNesquik()
+const ataqueMaya =maya.attack()
+const ataqueAzteca =azteca.attack()
 
-const bebeMaya = maya.drinkColaCao()
+/*
+azteca.drinkNesquik()
 
-const ataqueMaya = azteca.defend(maya.attack())
+maya.drinkColaCao()
 
-const ataqueAzteca = maya.defend(azteca.attack())
+azteca.defend(ataqueMaya)
 
-console.log(bebeAzteca)
+azteca.defend(ataqueAzteca)
+*/
